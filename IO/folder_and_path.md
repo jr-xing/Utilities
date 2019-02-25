@@ -2,5 +2,5 @@
 ## Folder
 ### Determine if path exist
 ```matlab
-exist(path);
+exist(path, 'dir');
 ```
