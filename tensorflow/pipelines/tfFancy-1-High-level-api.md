@@ -38,3 +38,23 @@ model.fit(data, labels, epochs=10, batch_size=32)
 ```
 
 ### Notes
+
+- Setting Data
+  - ```tf.data.Dataset```
+
+    ```python
+    # Instantiates a toy dataset instance:
+    dataset = tf.data.Dataset.from_tensor_slices((data, labels))
+    dataset = dataset.batch(32)
+    dataset = dataset.repeat()
+
+    # Don't forget to specify `steps_per_epoch` when calling `fit` on a dataset.
+    model.fit(dataset, epochs=10, steps_per_epoch=30)
+    ```
+
+- Model Building Blocks
+  - ```tf.keras.Sequential```
+  - ```tf.keras.layers```
+- Training and Validation
+  - ```tf.keras.Model.compile```
+  - ```tf.keras.Model.fit```
